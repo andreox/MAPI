@@ -16,7 +16,8 @@ void main( void ) {
 
 	GPIOA->MODER &=~ ( 1 << 0 ) ;
 	GPIOA->MODER &=~ ( 1 << 1 ) ; //Abilito GPIOA e lo se potrei anche fare GPIOA->MODER &=~ ( 3 << 0 ) ;
-
+	GPIOE->MODER |= ( 1 << 20 ) ;
+	
 	while ( 1 ) {
 
 		if ( GPIOA->IDR & ( 1 << 0 ) == ( 1 << 0 ) { //Il pulsante user, se premuto , setta a 1 PA0 : verifico se è stata effettuata tale op
