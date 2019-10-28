@@ -13,8 +13,9 @@ void main() {
 
 		if ( (GPIOA->IDR & 1) == 1 ) {
 
-				TIM2->CR1 |= TIM_CR1_CEN ;
 				TIM2->CNT = 0 ;
+				TIM2->CR1 |= TIM_CR1_CEN ;
+				
 
 				while( (GPIOA->IDR & 1) == 1 ) ;
 
